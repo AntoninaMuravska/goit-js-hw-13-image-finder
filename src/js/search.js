@@ -27,7 +27,6 @@ function onSearch(event) {
       fetchService.resetPage();
       // console.log('page', fetchService.page);
       clearContainer();
-
       createMarkup(data);
     });
   } catch (error) {
