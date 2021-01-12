@@ -33,6 +33,8 @@ function onSearch(event) {
 }
 
 function createMarkup(images) {
+  console.log(images);
+
   if (images.length === 0) {
     errorNotification('No matches found. Try again.');
     return;
@@ -40,7 +42,12 @@ function createMarkup(images) {
 
   const imageCard = imageCardTpl(images);
   galleryRef.insertAdjacentHTML('beforeend', imageCard);
-  loadMoreBtn.classList.remove('is-hidden');
+
+  if (images.length < 12) {
+    loadMoreBtn.classList.add('is-hidden');
+  } else {
+    loadMoreBtn.classList.remove('is-hidden');
+  }
 }
 
 function clearContainer() {
