@@ -24,7 +24,10 @@ function onSearch(event) {
 
   try {
     fetchService.fetchImg().then(data => {
+      fetchService.resetPage();
+      // console.log('page', fetchService.page);
       clearContainer();
+
       createMarkup(data);
     });
   } catch (error) {
@@ -33,7 +36,7 @@ function onSearch(event) {
 }
 
 function createMarkup(images) {
-  console.log(images);
+  // console.log(images);
 
   if (images.length === 0) {
     errorNotification('No matches found. Try again.');
@@ -58,6 +61,7 @@ function clearContainer() {
 function onLoadMore() {
   try {
     fetchService.fetchImg().then(data => {
+      // console.log('page2', fetchService.page);
       createMarkup(data);
       onScroll();
     });
