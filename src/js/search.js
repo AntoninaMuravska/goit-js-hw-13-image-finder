@@ -22,10 +22,10 @@ function onSearch(event) {
     return;
   }
 
+  fetchService.resetPage();
+
   try {
     fetchService.fetchImg().then(data => {
-      fetchService.resetPage();
-      // console.log('page', fetchService.page);
       clearContainer();
       createMarkup(data);
     });
@@ -60,7 +60,6 @@ function clearContainer() {
 function onLoadMore() {
   try {
     fetchService.fetchImg().then(data => {
-      // console.log('page2', fetchService.page);
       createMarkup(data);
       onScroll();
     });
