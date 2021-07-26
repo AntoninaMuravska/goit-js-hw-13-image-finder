@@ -1,2 +1,1 @@
-import './styles.css';
-import './js/search.js';
+import './sass/main.scss';
