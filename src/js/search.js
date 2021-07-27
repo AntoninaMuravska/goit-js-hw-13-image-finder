@@ -53,7 +53,10 @@ function createMarkup(images) {
     btnLoadMore.classList.remove('is-hidden');
   }
 
-  // if (images.length === )
+  if (images.length >= 481 && images.length <= 500) {
+    Notiflix.Notify.info('We are sorry, but you have reached the end of search results.');
+    btnLoadMore.classList.add('is-hidden');
+  }
 }
 
 function clearContainer() {

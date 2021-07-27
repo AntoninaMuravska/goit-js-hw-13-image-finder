@@ -20,18 +20,6 @@ export default class ApiService {
     return data.hits;
   }
 
-  async fetchTotalHits() {
-    const response = await fetch(
-      `${BASE_URL}&q=${this.query}&page=${this.page}&per_page=${this.perPage}&key=${KEY}`,
-    );
-
-    const data = await response.json();
-
-    this.incrementPage();
-
-    return data.totalHits;
-  }
-
   incrementPage() {
     this.page += 1;
   }
